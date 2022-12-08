@@ -3,9 +3,18 @@
     <div class="footer__container">
       <div class="footer__main">
         <div class="footer__connect">
-          <img src="@/assets/img/icons/tel.svg" />
-          <img src="@/assets/img/icons/email.svg" />
-          <img src="@/assets/img/icons/location.svg" />
+          <div class="footer__connect-icon">
+            <img src="@/assets/img/icons/tel.svg" />
+            <p>069 82 77 38079 92 77 38</p>
+          </div>
+          <div class="footer__connect-icon">
+            <img src="@/assets/img/icons/email.svg" />
+            <p>info@arron.md</p>
+          </div>
+          <div class="footer__connect-icon">
+            <img src="@/assets/img/icons/location.svg" />
+            <p>г. Кишинев, ул. Бэнулеску Бодони, д.33</p>
+          </div>
         </div>
         <div class="footer__down">
           <div class="footer__rate">
@@ -32,6 +41,19 @@
 <style lang="scss">
 .footer {
   margin-top: 6rem;
+  &__connect-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.6rem;
+    p {
+      max-width: 15rem;
+      font-weight: 500;
+      color: #13171d;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  }
   &__map {
     position: relative;
     margin-top: -8rem;
@@ -44,6 +66,9 @@
     height: 75rem;
   }
   &__main {
+    @media (max-width: 48em) {
+      width: 60rem;
+    }
     position: relative;
     z-index: 2;
     width: 130rem;
@@ -55,6 +80,9 @@
       0px 8px 10px rgba(255, 107, 0, 0.08);
   }
   &__down {
+    @media (max-width: 48em) {
+      gap: 10rem;
+    }
     display: flex;
     gap: 19rem;
   }
@@ -74,6 +102,7 @@
     img {
       width: 3.5rem;
       height: 3.5rem;
+      cursor: pointer;
     }
   }
   &__rate {
@@ -101,6 +130,7 @@
     img {
       width: 5.6rem;
       height: 5.6rem;
+      cursor: pointer;
     }
   }
 }

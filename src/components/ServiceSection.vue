@@ -1,7 +1,7 @@
 <template>
   <section class="service">
     <div class="service__container">
-      <div class="service__title">Мы работаем c устройствами:</div>
+      <div class="service__title">Мы работаем с устройствами:</div>
       <div class="service__card">
         <img src="@/assets/img/services/Apple.png" />
         <p>Apple</p>
@@ -40,12 +40,21 @@
 .service {
   margin-bottom: 8rem;
   &__container {
+    @media (max-width: 48em) {
+      max-width: 100%;
+      padding: 0 0;
+    }
     display: flex;
     flex-wrap: wrap;
     gap: 3.2rem;
     max-width: 130.4rem;
   }
   &__title {
+    @media (max-width: 48em) {
+      font-size: 4rem;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
     font-family: "Bebas Neue", sans-serif;
     color: #13171d;
     font-size: 8rem;
@@ -73,6 +82,7 @@
       background-repeat: no-repeat;
       border-radius: 50%;
       border: none;
+      background-size: 2.4rem 2.4rem;
       background-color: white;
       padding: 1.5rem;
       background-position: center;

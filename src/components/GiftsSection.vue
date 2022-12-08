@@ -16,9 +16,25 @@
           }"
           :pagination="{ clickable: true, el: '.gifts__pagination' }"
           :slides-per-view="4"
-          :space-between="30"
           :loop="true"
           :modules="modules"
+          :breakpoints="{
+            310: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            1240: {
+              slidesPerView: 4,
+            },
+            1650: {
+              slidesPerView: 4,
+            },
+          }"
         >
           <swiper-slide>
             <div class="gifts__card">
@@ -74,6 +90,9 @@
 .gifts {
   margin-bottom: 16rem;
   &__title {
+    @media (max-width: 48em) {
+      font-size: 4rem;
+    }
     font-family: "Bebas Neue", sans-serif;
     font-size: 5.6rem;
     color: #13171d;
@@ -95,6 +114,7 @@
     border: none;
     background-color: white;
     background-position: center;
+    background-size: 2.4rem 2.4rem;
     cursor: pointer;
   }
   &__pagination {
@@ -106,6 +126,7 @@
     width: 4.8rem;
     background-image: url("../assets/img/icons/Arrow.svg");
     background-repeat: no-repeat;
+    background-size: 2.4rem 2.4rem;
     padding: 1rem 2rem;
     border-radius: 50%;
     border: none;

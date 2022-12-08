@@ -43,6 +43,9 @@
   background: linear-gradient(180deg, #ebf3f8 0%, rgba(235, 243, 248, 0) 100%);
   padding: 8rem 0;
   &__title {
+    @media (max-width: 48em) {
+      font-size: 4rem;
+    }
     font-family: "Bebas Neue", sans-serif;
     font-size: 5.6rem;
     color: #13171d;
@@ -66,6 +69,7 @@
     background-image: url("../assets/img/icons/Arrow.svg");
     background-repeat: no-repeat;
     padding: 1rem 2rem;
+    background-size: 2.4rem 2.4rem;
     border-radius: 50%;
     border: none;
     background-color: white;
@@ -77,6 +81,7 @@
     width: 4.8rem;
     background-image: url("../assets/img/icons/Arrow.svg");
     background-repeat: no-repeat;
+    background-size: 2.4rem 2.4rem;
     padding: 1rem 2rem;
     border-radius: 50%;
     border: none;

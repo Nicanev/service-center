@@ -18,6 +18,23 @@
           :slides-per-view="3"
           :loop="true"
           :modules="modules"
+          :breakpoints="{
+            310: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1240: {
+              slidesPerView: 3,
+            },
+            1650: {
+              slidesPerView: 4,
+            },
+          }"
         >
           <swiper-slide
             ><img src="@/assets/img/about/review1.png" />
@@ -89,6 +106,9 @@ export default {
 .reviews {
   margin-bottom: 4rem;
   &__title {
+    @media (max-width: 48em) {
+      font-size: 4rem;
+    }
     font-family: "Bebas Neue", sans-serif;
     font-size: 5.6rem;
     color: #13171d;
@@ -107,6 +127,7 @@ export default {
     height: 4.8rem;
     width: 4.8rem;
     background-image: url("../assets/img/icons/Arrow.svg");
+    background-size: 2.4rem 2.4rem;
     background-repeat: no-repeat;
     padding: 1rem 2rem;
     border-radius: 50%;
@@ -124,6 +145,7 @@ export default {
     width: 4.8rem;
     background-image: url("../assets/img/icons/Arrow.svg");
     background-repeat: no-repeat;
+    background-size: 2.4rem 2.4rem;
     padding: 1rem 2rem;
     border-radius: 50%;
     border: none;

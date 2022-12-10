@@ -1,9 +1,7 @@
 <template>
   <div class="wrapper">
     <TheHeader />
-    <main id="main" @scroll="onScroll()">
-      <RouterView />
-    </main>
+    <RouterView />
     <TheFooter />
   </div>
 </template>

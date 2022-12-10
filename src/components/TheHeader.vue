@@ -6,35 +6,43 @@
   ></div>
   <div class="header" id="header" v-if="headerActive">
     <div class="header__container">
-      <img src="@/assets/img/Logo.svg" class="header__logo" />
+      <img
+        src="@/assets/img/Logo.svg"
+        @click="scrollTo('main')"
+        class="header__logo"
+      />
       <ul class="header__menu">
-        <li><a href="#">Наши услуги</a></li>
-        <li><a href="#">О компании</a></li>
-        <li><a href="#">Отзывы</a></li>
-        <li><a href="#">Выполненные заказы</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li @click="scrollTo('service')"><a>Наши услуги</a></li>
+        <li @click="scrollTo('about')"><a>О компании</a></li>
+        <li @click="scrollTo('review')"><a>Отзывы</a></li>
+        <li @click="scrollTo('orders')"><a>Выполненные заказы</a></li>
+        <li @click="scrollTo('contact')"><a>Контакты</a></li>
       </ul>
     </div>
   </div>
   <div class="headerScroll" v-if="headerScrollActive">
     <div class="headerScroll__container">
       <div class="headerScroll__left">
-        <img src="@/assets/img/Logo.svg" class="headerScroll__logo" />
+        <img
+          src="@/assets/img/Logo.svg"
+          @click="scrollTo('main')"
+          class="headerScroll__logo"
+        />
         <ul class="headerScroll__menu">
           <li :class="{ active: active == 'main' }">
-            <a href="#">Наши услуги</a>
+            <a @click="scrollTo('service')">Наши услуги</a>
           </li>
           <li :class="{ active: active == 'about' }">
-            <a href="#">О компании</a>
+            <a @click="scrollTo('about')">О компании</a>
           </li>
           <li :class="{ active: active == 'reviews' }">
-            <a href="#">Отзывы</a>
+            <a @click="scrollTo('review')">Отзывы</a>
           </li>
           <li :class="{ active: active == 'orders' }">
-            <a href="#">Выполненные заказы</a>
+            <a @click="scrollTo('orders')">Выполненные заказы</a>
           </li>
           <li :class="{ active: active == 'contact' }">
-            <a href="#">Контакты</a>
+            <a @click="scrollTo('contact')">Контакты</a>
           </li>
         </ul>
       </div>
@@ -51,7 +59,12 @@
   <div class="header-mobile for-mobile">
     <div class="header-mobile__container">
       <div class="header-mobile__left">
-        <img src="@/assets/img/Logo.svg" alt="" class="header-mobile__logo" />
+        <img
+          src="@/assets/img/Logo.svg"
+          @click="scrollTo('main')"
+          alt=""
+          class="header-mobile__logo"
+        />
         <button class="header-mobile__menu" @click="isOpenMenu = true">
           <img src="@/assets/img/icons/menu.svg" />
         </button>
@@ -74,11 +87,11 @@
       </button>
     </div>
     <ul class="header-menu__list">
-      <li><a href="#">Наши услуги</a></li>
-      <li><a href="#">О компании</a></li>
-      <li><a href="#">Отзывы</a></li>
-      <li><a href="#">Выполненные заказы</a></li>
-      <li><a href="#">Контакты</a></li>
+      <li><a @click="scrollTo('service')">Наши услуги</a></li>
+      <li><a @click="scrollTo('about')">О компании</a></li>
+      <li><a @click="scrollTo('review')">Отзывы</a></li>
+      <li><a @click="scrollTo('orders')">Выполненные заказы</a></li>
+      <li><a @click="scrollTo('contact')">Контакты</a></li>
     </ul>
     <div class="header-menu__address">
       <img src="@/assets/img/icons/map-pin.svg" />
@@ -91,6 +104,9 @@
 </template>
 
 <style lang="scss">
+a {
+  cursor: pointer;
+}
 .header-menu {
   @media (max-width: 48em) {
     display: flex !important;
@@ -313,6 +329,28 @@ export default {
       active: "main",
       isOpenMenu: false,
     };
+  },
+  methods: {
+    scrollTo(name) {
+      if (name == "main") {
+        window.scrollTo(0, 0);
+      }
+      if (name == "about") {
+        window.scrollTo(0, 2000);
+      }
+      if (name == "service") {
+        window.scrollTo(0, 1200);
+      }
+      if (name == "review") {
+        window.scrollTo(0, 2600);
+      }
+      if (name == "orders") {
+        window.scrollTo(0, 3300);
+      }
+      if (name == "contact") {
+        window.scrollTo(0, 6575);
+      }
+    },
   },
   mounted() {
     const header = document.getElementById("header");
